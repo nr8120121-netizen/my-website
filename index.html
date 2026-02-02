@@ -88,7 +88,7 @@ footer { margin-top: 30px; color: #888; font-size: 0.9em; }
 </div>
 
 <script>
-// Exact mapping: each full name has its own unique line
+// Exact mapping for full names
 const vibes = {
     "syeda bisma": "🌟Stylish and practical with a balanced approach to things. She stays composed under pressure and handles situations with a clear head. A reliable and level-headed classmate, and a person is lucky to have her as a friend!",
     "aqsa asif": "🎨 Thoughtful and expressive, she often shares her opinions openly. While she may sometimes get confused, she is always sincere and kind-hearted!",
@@ -108,7 +108,7 @@ function revealVibe() {
     }
 
     if (vibes[input]) {
-        // Display proper full name
+        // Display full name properly capitalized
         let displayName = input.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
         resultDiv.innerHTML = `<strong>Hey ${displayName}!</strong><br>${vibes[input]}`;
     } else {
@@ -118,7 +118,7 @@ function revealVibe() {
     resultDiv.style.display = 'block';
 }
 
-// Allow Enter key to submit
+// Enter key triggers button
 document.getElementById('nameInput').addEventListener('keypress', function(e) {
     if (e.key === 'Enter') revealVibe();
 });
