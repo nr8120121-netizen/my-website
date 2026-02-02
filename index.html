@@ -10,7 +10,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -20,7 +20,7 @@
             align-items: center;
             padding: 20px;
         }
-        
+
         .container {
             background: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
@@ -30,27 +30,27 @@
             text-align: center;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
-        
+
         h1 {
             color: #764ba2;
             margin-bottom: 10px;
             font-size: 2.5em;
         }
-        
+
         .sparkles {
             font-size: 1.2em;
         }
-        
+
         p {
             color: #555;
             margin-bottom: 20px;
             font-size: 1.1em;
         }
-        
+
         .input-group {
             margin: 30px 0;
         }
-        
+
         input[type="text"] {
             width: 100%;
             padding: 15px;
@@ -60,12 +60,12 @@
             text-align: center;
             transition: border-color 0.3s;
         }
-        
+
         input[type="text"]:focus {
             outline: none;
             border-color: #764ba2;
         }
-        
+
         button {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -77,31 +77,31 @@
             transition: transform 0.2s, box-shadow 0.2s;
             margin-top: 10px;
         }
-        
+
         button:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(118, 75, 162, 0.3);
         }
-        
+
         .squad-section {
             margin-top: 40px;
             padding-top: 30px;
             border-top: 2px dashed #ddd;
         }
-        
+
         h2 {
             color: #667eea;
             margin-bottom: 15px;
             font-size: 1.3em;
         }
-        
+
         .name-list {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 10px;
         }
-        
+
         .name-tag {
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             color: white;
@@ -110,17 +110,17 @@
             font-size: 0.9em;
             font-weight: 600;
         }
-        
+
         footer {
             margin-top: 30px;
             color: #888;
             font-size: 0.9em;
         }
-        
+
         .heart {
             color: #e74c3c;
         }
-        
+
         #result {
             display: none;
             margin-top: 30px;
@@ -137,67 +137,70 @@
     <div class="container">
         <h1>Friendship Vibes <span class="sparkles">✨</span></h1>
         <p>Discover your unique friendship aura with your squad!</p>
-        
+
         <div class="input-group">
             <input type="text" id="nameInput" placeholder="Enter your name to reveal your vibe">
             <button onclick="revealVibe()">Reveal My Vibe</button>
         </div>
-        
+
         <div id="result"></div>
-        
+
         <div class="squad-section">
             <h2>The amazing classmate squad:</h2>
             <div class="name-list">
                 <span class="name-tag">Syeda</span>
                 <span class="name-tag">Aqsa</span>
                 <span class="name-tag">Esha</span>
-                <span class="name-tag">Meerab</span>
-                <span class="name-tag">Meerab</span>
+                <span class="name-tag">Meerab Suhail</span>
+                <span class="name-tag">Meerab Mubarik</span>
                 <span class="name-tag">Alishba</span>
             </div>
         </div>
-        
+
         <footer>
             Made with <span class="heart">💕</span> for my amazing classmates
         </footer>
     </div>
-    
+
     <script>
-        const vibes = [
-            "🌟Stylish and practical with a balanced approach to things. She stays composed under pressure and handles situations with a clear head. A reliable and level-headed classmate, and a person is lucky to have her as a friend!",
-            "🎨 Thoughtful and expressive, she often shares her opinions openly. While she may sometimes get confused, she is always sincere and kind-hearted!",
-            "🛡️ Courageous and confident, she speaks her mind without hesitation. Intelligent and fearless, she inspires those around her!",
-            "🎭 Highly dedicated and disciplined, she takes her responsibilities seriously. Mature beyond her years and always focused, reflecting her strong upbringing!",
-            "🌈 Fun-loving and enjoys entertainment, yet sensitive and aware of others’ feelings. A caring and considerate friend!",
-            "⚡Reserved and shy, she prefers meaningful conversations within her close circle of friends. Thoughtful and gentle in her approach to people and situations!",
-        ];
-        
+        // Fixed mapping of names to vibes
+        const vibes = {
+            "syeda": "🌟Stylish and practical with a balanced approach to things. She stays composed under pressure and handles situations with a clear head. A reliable and level-headed classmate, and a person is lucky to have her as a friend!",
+            "aqsa": "🎨 Thoughtful and expressive, she often shares her opinions openly. While she may sometimes get confused, she is always sincere and kind-hearted!",
+            "esha": "🛡️ Courageous and confident, she speaks her mind without hesitation. Intelligent and fearless, she inspires those around her!",
+            "meerab Suhail": "🎭 Highly dedicated and disciplined, she takes her responsibilities seriously. Mature beyond her years and always focused, reflecting her strong upbringing!",
+            "meerab Mubarik": "🌈 Fun-loving and enjoys entertainment, yet sensitive and aware of others’ feelings. A caring and considerate friend!",
+            "alishba": "⚡Reserved and shy, she prefers meaningful conversations within her close circle of friends. Thoughtful and gentle in her approach to people and situations!"
+        };
+
         function revealVibe() {
-            const name = document.getElementById('nameInput').value.trim();
+            let name = document.getElementById('nameInput').value.trim().toLowerCase();
             const resultDiv = document.getElementById('result');
-            
+
             if (name === '') {
                 alert('Please enter your name first! ✨');
                 return;
             }
-            
-            // Generate a consistent vibe based on the name
-            let hash = 0;
-            for (let i = 0; i < name.length; i++) {
-                hash = name.charCodeAt(i) + ((hash << 5) - hash);
+
+            if (vibes[name]) {
+                resultDiv.innerHTML = `<strong>Hey ${name.charAt(0).toUpperCase() + name.slice(1)}!</strong><br>${vibes[name]}`;
+            } else {
+                resultDiv.innerHTML = `<strong>Hey ${name.charAt(0).toUpperCase() + name.slice(1)}!</strong><br>Sorry, no vibe available for this name!`;
             }
-            const vibeIndex = Math.abs(hash) % vibes.length;
-            
-            resultDiv.innerHTML = `<strong>Hey ${name}!</strong><br>${vibes[vibeIndex]}`;
+
             resultDiv.style.display = 'block';
         }
-        
+
         // Allow Enter key to submit
         document.getElementById('nameInput').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 revealVibe();
             }
         });
+    </script>
+</body>
+</html>
+
     </script>
 </body>
 </html>
