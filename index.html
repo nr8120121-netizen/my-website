@@ -1,127 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Friendship Vibes ✨</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        .container {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 40px;
-            max-width: 500px;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        }
-        h1 { color: #764ba2; margin-bottom: 10px; font-size: 2.5em; }
-        .sparkles { font-size: 1.2em; }
-        p { color: #555; margin-bottom: 20px; font-size: 1.1em; }
-        .input-group { margin: 30px 0; }
-        input[type="text"] {
-            width: 100%; padding: 15px; border: 2px solid #ddd;
-            border-radius: 50px; font-size: 1em; text-align: center;
-            transition: border-color 0.3s;
-        }
-        input[type="text"]:focus { outline: none; border-color: #764ba2; }
-        button {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white; border: none; padding: 15px 40px;
-            border-radius: 50px; font-size: 1.1em; cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s; margin-top: 10px;
-        }
-        button:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(118, 75, 162, 0.3); }
-        .squad-section { margin-top: 40px; padding-top: 30px; border-top: 2px dashed #ddd; }
-        h2 { color: #667eea; margin-bottom: 15px; font-size: 1.3em; }
-        .name-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-        .name-tag {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white; padding: 8px 16px; border-radius: 20px;
-            font-size: 0.9em; font-weight: 600;
-        }
-        footer { margin-top: 30px; color: #888; font-size: 0.9em; }
-        .heart { color: #e74c3c; }
-        #result {
-            display: none; margin-top: 30px; padding: 20px;
-            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-            border-radius: 15px; color: white; font-size: 1.2em; font-weight: bold;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Friendship Vibes ✨</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+h1 { color: #764ba2; margin-bottom: 10px; font-size: 2.5em; }
+.sparkles { font-size: 1.2em; }
+p { color: #555; margin-bottom: 20px; font-size: 1.1em; }
+.input-group { margin: 30px 0; }
+input[type="text"] {
+    width: 100%; padding: 15px; border: 2px solid #ddd;
+    border-radius: 50px; font-size: 1em; text-align: center;
+    transition: border-color 0.3s;
+}
+input[type="text"]:focus { outline: none; border-color: #764ba2; }
+button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white; border: none; padding: 15px 40px;
+    border-radius: 50px; font-size: 1.1em; cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s; margin-top: 10px;
+}
+button:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(118, 75, 162, 0.3); }
+.squad-section { margin-top: 40px; padding-top: 30px; border-top: 2px dashed #ddd; }
+h2 { color: #667eea; margin-bottom: 15px; font-size: 1.3em; }
+.name-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.name-tag {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white; padding: 8px 16px; border-radius: 20px;
+    font-size: 0.9em; font-weight: 600;
+}
+footer { margin-top: 30px; color: #888; font-size: 0.9em; }
+.heart { color: #e74c3c; }
+#result {
+    display: none; margin-top: 30px; padding: 20px;
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    border-radius: 15px; color: white; font-size: 1.2em; font-weight: bold;
+}
+</style>
 </head>
 <body>
 <div class="container">
-    <h1>Friendship Vibes <span class="sparkles">✨</span></h1>
-    <p>Discover your unique friendship aura with your squad!</p>
+<h1>Friendship Vibes <span class="sparkles">✨</span></h1>
+<p>Discover your unique friendship aura with your squad!</p>
 
-    <div class="input-group">
-        <input type="text" id="nameInput" placeholder="Enter your name to reveal your vibe">
-        <button onclick="revealVibe()">Reveal My Vibe</button>
+<div class="input-group">
+    <input type="text" id="nameInput" placeholder="Enter your full name to reveal your vibe">
+    <button onclick="revealVibe()">Reveal My Vibe</button>
+</div>
+
+<div id="result"></div>
+
+<div class="squad-section">
+    <h2>The amazing classmate squad:</h2>
+    <div class="name-list">
+        <span class="name-tag">Syeda Bisma</span>
+        <span class="name-tag">Aqsa Asif</span>
+        <span class="name-tag">Esha Azhar</span>
+        <span class="name-tag">Meerab Mubarik</span>
+        <span class="name-tag">Meerab Suhail</span>
+        <span class="name-tag">Alishba Fyaz</span>
     </div>
+</div>
 
-    <div id="result"></div>
-
-    <div class="squad-section">
-        <h2>The amazing classmate squad:</h2>
-        <div class="name-list">
-            <span class="name-tag">Syeda Bisma</span>
-            <span class="name-tag">Aqsa Asif</span>
-            <span class="name-tag">Esha Azhar</span>
-            <span class="name-tag">Meerab Mubarik</span>
-            <span class="name-tag">Meerab Suhail</span>
-            <span class="name-tag">Alishba Fyaz</span>
-        </div>
-    </div>
-
-    <footer>
-        Made with <span class="heart">💕</span> for my amazing classmates
-    </footer>
+<footer>
+    Made with <span class="heart">💕</span> for my amazing classmates
+</footer>
 </div>
 
 <script>
-    // Fixed mapping: each full name has its own unique line
-    const vibes = {
-        "syeda bisma": "🌟Stylish and practical with a balanced approach to things. She stays composed under pressure and handles situations with a clear head. A reliable and level-headed classmate, and a person is lucky to have her as a friend!",
-        "aqsa asif": "🎨 Thoughtful and expressive, she often shares her opinions openly. While she may sometimes get confused, she is always sincere and kind-hearted!",
-        "esha azhar": "🛡️ Courageous and confident, she speaks her mind without hesitation. Intelligent and fearless, she inspires those around her!",
-        "meerab mubarik": "🌈 Fun-loving and enjoys entertainment, yet sensitive and aware of others’ feelings. A caring and considerate friend!",
-        "meerab suhail": "🎭 Highly dedicated and disciplined, she takes her responsibilities seriously. Mature beyond her years and always focused, reflecting her strong upbringing!",
-        "alishba fyaz": "⚡Reserved and shy, she prefers meaningful conversations within her close circle of friends. Thoughtful and gentle in her approach to people and situations!"
-    };
+// Exact mapping: each full name has its own line
+const vibes = {
+    "syeda bisma": "🌟Stylish and practical with a balanced approach to things. She stays composed under pressure and handles situations with a clear head. A reliable and level-headed classmate, and a person is lucky to have her as a friend!",
+    "aqsa asif": "🎨 Thoughtful and expressive, she often shares her opinions openly. While she may sometimes get confused, she is always sincere and kind-hearted!",
+    "esha azhar": "🛡️ Courageous and confident, she speaks her mind without hesitation. Intelligent and fearless, she inspires those around her!",
+    "meerab mubarik": "🌈 Fun-loving and enjoys entertainment, yet sensitive and aware of others’ feelings. A caring and considerate friend!",
+    "meerab suhail": "🎭 Highly dedicated and disciplined, she takes her responsibilities seriously. Mature beyond her years and always focused, reflecting her strong upbringing!",
+    "alishba fyaz": "⚡Reserved and shy, she prefers meaningful conversations within her close circle of friends. Thoughtful and gentle in her approach to people and situations!"
+};
 
-    function revealVibe() {
-        let name = document.getElementById('nameInput').value.trim().toLowerCase();
-        const resultDiv = document.getElementById('result');
+function revealVibe() {
+    let input = document.getElementById('nameInput').value.trim().toLowerCase();
+    const resultDiv = document.getElementById('result');
 
-        if (name === '') {
-            alert('Please enter your name first! ✨');
-            return;
-        }
-
-        if (vibes[name]) {
-            // Capitalize each word in name
-            let displayName = name.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
-            resultDiv.innerHTML = `<strong>Hey ${displayName}!</strong><br>${vibes[name]}`;
-        } else {
-            resultDiv.innerHTML = `<strong>Hey ${name}!</strong><br>Sorry, no vibe available for this name!`;
-        }
-
-        resultDiv.style.display = 'block';
+    if (input === '') {
+        alert('Please enter your full name first! ✨');
+        return;
     }
 
-    // Allow Enter key to submit
-    document.getElementById('nameInput').addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') revealVibe();
-    });
+    if (vibes[input]) {
+        // Display proper full name
+        let displayName = input.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+        resultDiv.innerHTML = `<strong>Hey ${displayName}!</strong><br>${vibes[input]}`;
+    } else {
+        resultDiv.innerHTML = `<strong>Hey!</strong><br>Sorry, no vibe available for this name!`;
+    }
+
+    resultDiv.style.display = 'block';
+}
+
+// Allow Enter key to submit
+document.getElementById('nameInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') revealVibe();
+});
 </script>
 </body>
 </html>
