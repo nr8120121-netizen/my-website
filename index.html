@@ -95,5 +95,33 @@
         "esha azhar": "🛡️ Courageous and confident, she speaks her mind without hesitation. Intelligent and fearless, she inspires those around her!",
         "meerab mubarik": "🌈 Fun-loving and enjoys entertainment, yet sensitive and aware of others’ feelings. A caring and considerate friend!",
         "meerab suhail": "🎭 Highly dedicated and disciplined, she takes her responsibilities seriously. Mature beyond her years and always focused, reflecting her strong upbringing!",
-        "alishba fyaz": "⚡Reserved and shy, she prefers m
+        "alishba fyaz": "⚡Reserved and shy, she prefers meaningful conversations within her close circle of friends. Thoughtful and gentle in her approach to people and situations!"
+    };
 
+    function revealVibe() {
+        let name = document.getElementById('nameInput').value.trim().toLowerCase();
+        const resultDiv = document.getElementById('result');
+
+        if (name === '') {
+            alert('Please enter your name first! ✨');
+            return;
+        }
+
+        if (vibes[name]) {
+            // Capitalize each word in name
+            let displayName = name.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+            resultDiv.innerHTML = `<strong>Hey ${displayName}!</strong><br>${vibes[name]}`;
+        } else {
+            resultDiv.innerHTML = `<strong>Hey ${name}!</strong><br>Sorry, no vibe available for this name!`;
+        }
+
+        resultDiv.style.display = 'block';
+    }
+
+    // Allow Enter key to submit
+    document.getElementById('nameInput').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') revealVibe();
+    });
+</script>
+</body>
+</html>
